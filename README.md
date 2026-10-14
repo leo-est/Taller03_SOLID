@@ -1,7 +1,7 @@
 # Taller03_SOLID
 
 <<<<<<< HEAD
-# Integrante 2 OCP
+# Integrante 2 Leonardo Estrada OCP
 - ¿Por qué los condicionales repetidos hacen más caro el cambio?
 Cada vez que se quiera agregar un nuevo tratamiento se agregar un nuevo if con cada información nueva y si se anade mas y mas con el tiempo llegaría a ser demasiado extenso lo cual toma demasiado tiempo, dinero y encima no es practico. Por eso al cambiarlo, simplemente se agrega un nuevo tratamiento y no se modifica ninguna clase solo se extiende
 - ¿Qué pasaría si agregamos `Odontologia` como tratamiento?
