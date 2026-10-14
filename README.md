@@ -2,11 +2,11 @@
 
 # Integrante 1 Valentina Concha RCP
 ¿Cuántas razones para cambiar tenía Veterinario antes del refactoring?
-Tenia 4 razones
+- Tenia 4 razones
 ¿Qué ganamos al separar modelo y servicios?
-Que se cumpla el principio de solid el SRP
+- Que se cumpla el principio de solid el SRP
 ¿Qué clase debería cambiar si mañana cambia el formato del reporte?
-Solo deberia cambiar el ReporteService
+- Solo deberia cambiar el ReporteService
 # Integrante 2 Leonardo Estrada OCP
 - ¿Por qué los condicionales repetidos hacen más caro el cambio?
 Cada vez que se quiera agregar un nuevo tratamiento se agregar un nuevo if con cada información nueva y si se anade mas y mas con el tiempo llegaría a ser demasiado extenso lo cual toma demasiado tiempo, dinero y encima no es practico. Por eso al cambiarlo, simplemente se agrega un nuevo tratamiento y no se modifica ninguna clase solo se extiende
