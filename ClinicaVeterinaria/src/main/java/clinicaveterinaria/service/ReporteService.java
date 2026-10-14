@@ -25,6 +25,7 @@ public class ReporteService {
         }
         return resultado;
     }
+    
 
     public List<Mascota> generarReporteMascotasPorDueno(String duenoNombre) {
         List<Mascota> resultado = new ArrayList<>();
@@ -49,4 +50,5 @@ public class ReporteService {
         }
         return total;
     }
+    
 }

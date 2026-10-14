@@ -8,4 +8,5 @@ public class DiagnosticoService {
         cita.setDiagnostico(diagnostico);
         cita.setEstado(EstadoCita.ATENDIDA);
     }
+   
 }
