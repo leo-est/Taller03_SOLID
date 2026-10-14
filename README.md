@@ -2,9 +2,9 @@
 
 # Integrante 1 Valentina Concha RCP
 ¿Cuántas razones para cambiar tenía Veterinario antes del refactoring?
-- Tenia 4 razones
+- Tenia 4 razones, "Veterinario" hacia las reservas, los reportes, el diagnostico y la facturación.
 ¿Qué ganamos al separar modelo y servicios?
-- Que se cumpla el principio de solid el SRP
+- Que se cumpla el principio de solid el SRP, así evitando tener que cambiar la clase "veterinario" cada vez que cambiemos algo en una de las clases de servicio.
 ¿Qué clase debería cambiar si mañana cambia el formato del reporte?
 - Solo deberia cambiar el ReporteService
 # Integrante 2 Leonardo Estrada OCP

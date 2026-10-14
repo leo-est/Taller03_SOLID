@@ -41,15 +41,15 @@ public class Main {
         System.out.println("Mascotas de Ana Perez: " + reporteService.generarReporteMascotasPorDueno("Ana Perez").size());
         System.out.println("Ingresos del mes: " + reporteService.calcularIngresosMensual());
 
-        demostrarViolacionesSinRomperEjecucion(veterinario, mascota, tratamiento);
+        demostrarViolacionesSinRomperEjecucion(veterinario, mascota, tratamiento, reservaService, diagnosticoService, reporteService);
         new Clinica().agendarConsultaRapida(mascota, veterinario);
         new ServicioClinicaCompleto(baseDatos).calcularTratamiento(tratamiento);
     }
 
-    private static void demostrarViolacionesSinRomperEjecucion(ReservaService reservaService, DiagnosticoService diagnosticoService, ReporteService reporteService, Mascota mascota, Tratamiento tratamiento) {
-        Cita citaDesdeModelo = reservaService.reservarCita(2, mascota, LocalDate.now().plusDays(1));
-        diagnosticoService.diagnosticar(citaDesdeModelo, "Ejemplo de SRP violado desde el modelo.");
-        System.out.println(reporteService.crearReporte(citaDesdeModelo));
+    private static void demostrarViolacionesSinRomperEjecucion(Veterinario veterinario, ReservaService reservaService, DiagnosticoService diagnosticoService, ReporteService reporteService, Mascota mascota, Tratamiento tratamiento) {
+        Cita citaDesdeServicio = reservaService.reservarCita(2, mascota, veterinario, LocalDate.now().plusDays(1));
+        diagnosticoService.diagnosticar(citaDesdeServicio, "Ejemplo de SRP hecho bien");
+        System.out.println(reporteService.generarReporteCitasPorVeterinario(veterinario.getId()));
 
         Animal perro = new Perro(1, "Lalo");
         perro.caminar();

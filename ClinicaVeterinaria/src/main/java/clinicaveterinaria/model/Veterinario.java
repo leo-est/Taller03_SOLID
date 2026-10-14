@@ -16,7 +16,6 @@ public class Veterinario {
         this.disponible = disponible;
     }
 
-
     public int getId() {
         return id;
     }
