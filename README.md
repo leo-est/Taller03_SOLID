@@ -9,7 +9,7 @@ Con el código anterior, no funciona y deberíamos modificar cada clase para que
 - ¿Cuándo una interfaz ayuda a extender el sistema?
 Cuando se requiere agregar cosas sin tener que cambiar mucho el código, simplemente agregando lo que se desea y llega a ser mucho mas intuitivo y practico para el usuario
 =======
-Integrante 3- Llano Maria Belen
+# Integrante 3- Llano Maria Belen
 - ¿Por qué lanzar `UnsupportedOperationException` puede ser señal de mal diseño?
 Porque una clase heredo un metodo que no se puede ejecutar.
 - ¿Qué contrato estaba prometiendo `Animal`?
