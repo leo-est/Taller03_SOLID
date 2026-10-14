@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 
-public class BaseDatos implements IBaseDatos {
+public class BaseDatos {
     private final List<Mascota> mascotas = new ArrayList<>();
     private final List<Veterinario> veterinarios = new ArrayList<>();
     private final List<Cita> citas = new ArrayList<>();
@@ -22,27 +22,22 @@ public class BaseDatos implements IBaseDatos {
     private final List<Factura> facturas = new ArrayList<>();
     private final Map<String, Integer> auditoria = new HashMap<>();
 
-    @Override
     public List<Mascota> getMascotas() {
         return mascotas;
     }
 
-    @Override
     public List<Veterinario> getVeterinarios() {
         return veterinarios;
     }
 
-    @Override
     public List<Cita> getCitas() {
         return citas;
     }
 
-    @Override
     public List<Tratamiento> getTratamientos() {
         return tratamientos;
     }
 
-    @Override
     public List<Factura> getFacturas() {
         return facturas;
     }
