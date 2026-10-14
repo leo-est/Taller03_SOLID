@@ -1,5 +1,6 @@
 package clinicaveterinaria.service;
 
+import clinicaveterinaria.interfaces.ITratamiento;
 import clinicaveterinaria.model.TipoTratamiento;
 import clinicaveterinaria.model.Tratamiento;
 import clinicaveterinaria.repository.BaseDatos;
@@ -38,17 +39,44 @@ public class TratamientoService {
         baseDatos.registrarOperacion("eliminarTratamiento");
     }
 
-    public String prepararSala(Tratamiento tratamiento) {
-        if (tratamiento.getTipo() == TipoTratamiento.VACUNA) {
-            return "Preparar refrigeracion y jeringas.";
-        } else if (tratamiento.getTipo() == TipoTratamiento.CIRUGIA) {
-            return "Preparar quirofano y anestesia.";
-        } else if (tratamiento.getTipo() == TipoTratamiento.MEDICAMENTO) {
-            return "Preparar receta y dosis.";
-        } else if (tratamiento.getTipo() == TipoTratamiento.FISIOTERAPIA) {
-            return "Preparar camilla y bandas elasticas.";
+    public interface ITratamiento {
+        void enviar (String prepararSala);
+
+        public class VacunaTratamiento implements  ITratamiento {
+            @Override
+            public void enviar(String prepararSala){
+
+                System.out.println("Preparar refrigeracion y jeringas." + prepararSala);
+            }
         }
-        return "Sin preparacion.";
+        public class CirugiaTratamiento implements  ITratamiento {
+            @Override
+            public void enviar(String prepararSala){
+
+                System.out.println("Preparar quirofano y anestesia." + prepararSala);
+            }
+        }
+        public class MedicamentoTratamiento implements  ITratamiento {
+            @Override
+            public void enviar(String prepararSala){
+
+                System.out.println("Preparar receta y dosis." + prepararSala);
+            }
+        }
+        public class FisioterapiaTratamiento implements  ITratamiento {
+            @Override
+            public void enviar(String prepararSala){
+
+                System.out.println("Preparar camilla y bandas elasticas." + prepararSala);
+            }
+        }
+        public class TratamientoService {
+        public void  registrarOperacion(ITratamiento tratamiento) {
+            tratamiento.aplicar(prepararSala);
+
+        }
+    }
+        
     }
 
     public List<Tratamiento> listarTratamientos() {
