@@ -68,4 +68,22 @@ return "Animal{" +
 ", tipo=" + tipo +
 '}';
 }
+
+@Override
+public void volar() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'volar'");
+}
+
+@Override
+public void nadar() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'nadar'");
+}
+
+@Override
+public void caminar() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'caminar'");
+}
 }
