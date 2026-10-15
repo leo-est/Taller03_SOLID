@@ -31,3 +31,14 @@
 
   Cree las interfaces de Caminador, Nadador y Volador para que cada animal implemente la que puede ejecutar.
 
+  ### Integrante 4 - DIP/ISP
+- ¿Qué problema causa una interfaz gigante en equipos grandes?
+- 
+  Obliga a las clases a implementar métodos que no usan y quedan vacíos. Además, si todos en el equipo modifican la misma interfaz gigante, se arman muchos conflictos de merge en Git y es un dolor de cabeza mantener el código.
+- ¿Por qué new DirectoBaseDatos() dificulta cambiar o probar la clase?
+
+  Porque deja el código súper acoplado. Si mañana quiero usar otra base de datos, me toca meterme a modificar el código por dentro. Y para hacer pruebas es peor, porque no puedo inyectarle una base de datos falsa para probar sin tocar datos reales.
+- ¿Qué dependencia debería conocer el código de alto nivel: interfaz o clase concreta?
+
+  Debe conocer solo la interfaz. Las clases con la lógica principal no tienen por qué saber los detalles de cómo está construida la base de datos por debajo, solo necesitan saber qué métodos pueden usar.
+
