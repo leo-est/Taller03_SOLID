@@ -20,7 +20,7 @@
 - ¿Cuándo una interfaz ayuda a extender el sistema?
 
   Cuando se requiere agregar cosas sin tener que cambiar mucho el código, simplemente agregando lo que se desea y llega a ser mucho mas intuitivo y practico para el usuario
-### Integrante 3- Llano Maria Belen
+### Integrante 3 Llano Maria Belen
 - ¿Por qué lanzar `UnsupportedOperationException` puede ser señal de mal diseño?
 
   Porque una clase heredo un metodo que no se puede ejecutar.
@@ -31,7 +31,7 @@
 
   Cree las interfaces de Caminador, Nadador y Volador para que cada animal implemente la que puede ejecutar.
 
-  ### Integrante 4 - DIP/ISP
+### Integrante 4 - DIP/ISP
 - ¿Qué problema causa una interfaz gigante en equipos grandes?
   
   Obliga a las clases a implementar métodos que no usan y quedan vacíos. Además, si todos en el equipo modifican la misma interfaz gigante, se arman muchos conflictos de merge en Git y es un dolor de cabeza mantener el código.
