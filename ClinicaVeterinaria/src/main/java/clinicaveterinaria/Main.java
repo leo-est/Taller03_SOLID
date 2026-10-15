@@ -1,5 +1,6 @@
 package clinicaveterinaria;
 
+import clinicaveterinaria.interfaces.IBaseDatos;
 import clinicaveterinaria.model.*;
 import clinicaveterinaria.repository.*;
 import clinicaveterinaria.service.*;
@@ -42,8 +43,8 @@ public class Main {
         System.out.println("Ingresos del mes: " + reporteService.calcularIngresosMensual());
 
         demostrarViolacionesSinRomperEjecucion(veterinario, mascota, tratamiento);
-        new Clinica().agendarConsultaRapida(mascota, veterinario);
-        new ServicioClinicaCompleto(baseDatos).calcularTratamiento(tratamiento);
+        Clinica clinica = new Clinica(new DirectoVeterinario(), (IBaseDatos) new DirectoBaseDatos());
+        clinica.agendarConsultaRapida(mascota, veterinario);
     }
 
     private static void demostrarViolacionesSinRomperEjecucion(Veterinario veterinario, Mascota mascota, Tratamiento tratamiento) {
