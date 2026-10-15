@@ -1,22 +1,29 @@
 package clinicaveterinaria.model;
 
-import clinicaveterinaria.interfaces.ITratamiento;
+public class VacunaTratamiento extends Tratamiento {
 
-public class VacunaTratamiento implements ITratamiento {
-    private final double costo;
-
-    public VacunaTratamiento(double costo) {
-        this.costo = costo;
+    public VacunaTratamiento(int id, String descripcion, double costo) {
+        super(id, descripcion, costo);
     }
 
     @Override
     public double calcularCostoFinal() {
-        return costo + 5.0;
+        return getCosto() + 5.0;
     }
 
     @Override
     public String obtenerIndicaciones() {
         return "Observar fiebre durante 24 horas.";
+    }
+
+    @Override
+    public String prepararSala() {
+        return "Preparar refrigeracion y jeringas.";
+    }
+
+    @Override
+    public double calcularConImpuestos() {
+        return getCosto() * 1.12;
     }
 }
 

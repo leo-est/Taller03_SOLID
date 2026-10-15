@@ -1,12 +1,10 @@
 package clinicaveterinaria.service;
 
 import clinicaveterinaria.interfaces.ITratamiento;
-import clinicaveterinaria.model.TipoTratamiento;
 import clinicaveterinaria.model.Tratamiento;
 import clinicaveterinaria.repository.BaseDatos;
 
 import java.util.List;
-
 
 public class TratamientoService {
     private final BaseDatos baseDatos;
@@ -39,44 +37,10 @@ public class TratamientoService {
         baseDatos.registrarOperacion("eliminarTratamiento");
     }
 
-    public interface ITratamiento {
-        void enviar (String prepararSala);
-
-        public class VacunaTratamiento implements  ITratamiento {
-            @Override
-            public void enviar(String prepararSala){
-
-                System.out.println("Preparar refrigeracion y jeringas." + prepararSala);
-            }
-        }
-        public class CirugiaTratamiento implements  ITratamiento {
-            @Override
-            public void enviar(String prepararSala){
-
-                System.out.println("Preparar quirofano y anestesia." + prepararSala);
-            }
-        }
-        public class MedicamentoTratamiento implements  ITratamiento {
-            @Override
-            public void enviar(String prepararSala){
-
-                System.out.println("Preparar receta y dosis." + prepararSala);
-            }
-        }
-        public class FisioterapiaTratamiento implements  ITratamiento {
-            @Override
-            public void enviar(String prepararSala){
-
-                System.out.println("Preparar camilla y bandas elasticas." + prepararSala);
-            }
-        }
-        public class TratamientoService {
-        public void  registrarOperacion(ITratamiento tratamiento) {
-            tratamiento.aplicar(prepararSala);
-
-        }
-    }
-        
+    // Aquí sucede la magia del OCP: 
+    // Dependemos de la interfaz en vez del modelo, logrando eliminar por completo los if/else.
+    public String prepararSala(ITratamiento tratamiento) {
+        return tratamiento.prepararSala();
     }
 
     public List<Tratamiento> listarTratamientos() {
